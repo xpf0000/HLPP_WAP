@@ -57,3 +57,7 @@ body{background-color:#f4f5f6;}
 .bor{border:#e1e1e1 1px solid;}.bor-bn{ border-bottom:none;}.pd10{padding:10px;}.pd3-10{padding:3px 10px 10px;}.pd7{padding:7px;}.pd30-20{ padding:30px 20px 40px;}
 .h300{min-height:300px}.lh42{ line-height:42px;}.ove{overflow:hidden;}.w80{width:80px;}.f11{ font-size:11px;}.c8{ color:#888}
 .lh12{ line-height:12px;}
+
+ .ms-controller{
+     visibility: hidden;
+  }
