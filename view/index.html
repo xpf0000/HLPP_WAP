@@ -23,20 +23,29 @@
 </header>
 
 
-	<div id="aui-slide">
+	<div id="aui-slide" class="ms-controller" ms-controller="aui-slide">
 		<div class="aui-slide-wrap" >
-			<div class="aui-slide-node">
-				<img src="../images/banner001.jpg" />
+			
+			<div ms-for="el in @info" class="aui-slide-node">
+				<img ms-attr="{src: el.picurl}" />
 			</div>
+			
+<!--
 			<div class="aui-slide-node">
 				<img src="../images/banner002.jpg" />
 			</div>
 			<div class="aui-slide-node">
 				<img src="../images/banner003.jpg" />
 			</div>
+-->
+			
+			
 		</div>
 		<div class="aui-slide-page-wrap"><!--分页容器--></div>
 	</div>
+	
+	
+	
 <div class="class_icon mt15">
 <ul>
 <li><a href=""><span class="index_icon class_icon01 db"></span><span class="class_name db">骑行</span></a></li>
@@ -51,42 +60,14 @@
 
 <div class="index_info_list ms-controller" ms-controller="indexVC" id="indexVC">
 <ul>
-<li>
-<a href="event_info.html"><img src="../images/temp/a01.jpg" border="0"></a>
-<h3><a href="event_info.html">相约小浪底体验中原地区首个森林氧吧山地车主题</a></h3>
-<div class="index_list_time f14">时间：2016-06-09<span class="index_list_time_no">1天</span></div>
-<div class="index_list_no">12306</div><span class="a_price">￥60</span>
+	
+<li ms-for="el in @tj">
+<a href="event_info.html"><img ms-attr="{src: el.url}" border="0"></a>
+<h3><a href="event_info.html">{{el.title}}</a></h3>
+<div class="index_list_time f14">时间：{{el.s_time_str}}<span class="index_list_time_no">1天</span></div>
+<div class="index_list_no">{{el.view}}</div><span class="a_price">￥{{el.price}}</span>
 </li>
-<li>
-<a href="event_info.html"><img src="../images/temp/a02.jpg" border="0"></a>
-<h3><a href="event_info.html">爱在洛阳—“万人相亲会”5月21日等你来！</a></h3>
-<div class="index_list_time f14">时间：2016-06-09<span class="index_list_time_no">1天</span></div>
-<div class="index_list_no">12306</div><span class="a_price">￥60</span>
-</li>
-<li>
-<a href="event_info.html"><img src="../images/temp/a03.jpg" border="0"></a>
-<h3><a href="event_info.html">月22日周日《大河报骑行俱乐部》邀你参观</a></h3>
-<div class="index_list_time f14">时间：2016-06-09<span class="index_list_time_no">1天</span></div>
-<div class="index_list_no">12306</div><span class="a_price">￥90</span>
-</li>
-<li>
-<a href="event_info.html"><img src="../images/temp/a02.jpg" border="0"></a>
-<h3><a href="event_info.html">《极限户外洛阳唐朝车队》周六发队段家沟水库</a></h3>
-<div class="index_list_time f14">时间：2016-06-09<span class="index_list_time_no">1天</span></div>
-<div class="index_list_no">12306</div><span class="a_price">￥320</span>
-</li>
-<li>
-<a href="event_info.html"><img src="../images/temp/a04.jpg" border="0"></a>
-<h3><a href="event_info.html">5月29日周日自驾小沟背一日游活动特价仅需29元</a></h3>
-<div class="index_list_time f14">时间：2016-06-09<span class="index_list_time_no">1天</span></div>
-<div class="index_list_no">12306</div><span class="a_price">免费</span>
-</li>
-<li>
-<a href="event_info.html"><img src="../images/temp/a01.jpg" border="0"></a>
-<h3><a href="event_info.html">相约小浪底体验中原地区首个森林氧吧山地车主题</a></h3>
-<div class="index_list_time f14">时间：2016-06-09<span class="index_list_time_no">1天</span></div>
-<div class="index_list_no">12306</div><span class="a_price">￥60</span>
-</li>
+
 </ul>
 </div>
 
@@ -94,7 +75,14 @@
 
 
 
-<div class="page_load"><span class="fl" style="margin-top:6px;"><img src="../images/loadding.gif" width="25" height="25"></span><span class="fl">信息加载中...</span><div class="clear"></div></div>
+<div class="page_load ms-controller" ms-controller="indexPage" id="indexPage">
+	<span class="fl" style="margin-top:6px;"><img ms-attr="{hidden: @end}" src="../images/loadding.gif" width="25" height="25"></span><span class="fl">{{@msg}}</span>
+<div class="clear"></div>
+</div>
+
+
+
+
 </body>
 
 

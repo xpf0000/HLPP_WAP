@@ -7,19 +7,24 @@
 <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
 <meta name="apple-mobile-web-app-capable" content="yes" />
 <title>会员登录-河洛泡泡</title>
-<link rel="stylesheet" type="text/css" href="css/base.css"/>
-<link rel="stylesheet" type="text/css" href="css/index.css"/>
-<link rel="stylesheet" type="text/css" href="css/aui.css"/>
-<link rel="stylesheet" type="text/css" href="css/info.css"/>
+<link rel="stylesheet" type="text/css" href="../css/base.css"/>
+<link rel="stylesheet" type="text/css" href="../css/index.css"/>
+<link rel="stylesheet" type="text/css" href="../css/aui.css"/>
+<link rel="stylesheet" type="text/css" href="../css/info.css"/>
+
+<script data-main="../js/login" src="../lib/require-min.js" ></script>
+
 </head>
 
 <body>
-<header class="page_header">
-<a href="" class="nav_back"></a>
-    <h1 class="page_name">登录</h1>
- <span class="db fr"><a class="page_nav_key db">栏目导航</a></span>   
+	
+	
+<header class="page_header" id="header">
+ 
 </header>
-<div class="form_group mt10">
+
+
+<div class="form_group mt10 ms-controller" ms-controller="loginVC" id="loginVC">
 <ul>
 <li><em class="sign_up_mob db"></em><input name="user_name" type="text" placeholder="请输入手机号" class="login_text"/></li>
 <li><em class="sign_up_pwd db"></em><input name="user_name" type="text" placeholder="请输入密码" class="login_text"/></li>
@@ -28,6 +33,7 @@
 <div class="form_group_btn"><button>登录</button></div>
 <div class="reg_link mb35"><a href="">忘记密码?</a><a href="" class="fr">手机快速注册</a><div class="clear"></div></div>
 
+<!--
 <div class="login_line"><span class="db">使用以下账号登录</span></div>
 <div class="login_icon">
 <ul>
@@ -36,6 +42,7 @@
 </ul>
 <div class="clear"></div>
 </div>
+-->
 
 </body>
 </html>

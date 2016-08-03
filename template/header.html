@@ -1,17 +1,19 @@
 <div id="headerView" ms-controller="headerView" class="ms-controller">
-<h1 class="index_page_name">河洛泡泡</h1>
-<span class="db fr"><a class="nav_key db" ms-click="@show_menu" >栏目导航</a></span>   
+	
+<a href="" ms-attr="{hidden: !@back}" class="nav_back"></a>	
+<h1 ms-class="[(@back ? 'page_name' : 'index_page_name')]" >{{@title}}</h1>
+<span class="db fr"><a ms-class="['db',(@back ? 'page_nav_key' : 'nav_key')]" ms-click="@show_menu" >栏目导航</a></span>   
 
 <div class="right_menu">
 <span class="right_menu_close db"></span>
-<div class="right_user_info tc"><button>登录</button></div>
+<div class="right_user_info tc"><button ms-click="@loginClick">登录</button></div>
 <div class="right_menu_search rel">
 <input type="text" id="searchKey" name="searchKey" class="right_search_text" value="" placeholder="搜索活动"/>
  <input type="button" class="right_menu_search_i abs" value="" onClick="search()" />
 </div>
 <div class="right_menu_list">
 <ul>
-<li class="right_menu_01"><a href="">首页</a></li>
+<li class="right_menu_01"><a href="index.html">首页</a></li>
 <li class="right_menu_02"><a href="">我发布的</a></li>
 <li class="right_menu_03"><a href="">我参与的</a></li>
 <li class="right_menu_04"><a href="">我收藏的</a></li>

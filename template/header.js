@@ -6,6 +6,9 @@ requirejs(['main'], function (main) {
 	    
 		  		$id: "headerView",
 		  		
+		  		title: '河洛泡泡',
+		  		
+		  		back: true,
 		  		
 		  		show_menu: function()
 		  		{
@@ -24,8 +27,19 @@ requirejs(['main'], function (main) {
 			},300);
 		})
 		  		},
+		  		
+		  		
+		  		loginClick: function()
+		  		{
+			  		location.href = "login.html";
+		  		},
+		  		
 
 		  		});
+		  		
+		  		
+		  		
+		  		console.log("header is loaded!!!!");
 		  		
 		  		
 		  		$("#header").load("../template/header.html",function(){
