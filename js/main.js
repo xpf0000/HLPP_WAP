@@ -12,7 +12,9 @@ require.config({
         auislide: 'aui-slide',
         product_list: 'product_list',
         net: 'XRequest',
-        header: '../template/header',  
+        header: '../template/header',
+        auitoast: 'aui-toast',
+          
     },
     shim:{
     

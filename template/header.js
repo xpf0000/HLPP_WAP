@@ -8,7 +8,7 @@ requirejs(['main'], function (main) {
 		  		
 		  		title: '河洛泡泡',
 		  		
-		  		back: true,
+		  		back: false,
 		  		
 		  		show_menu: function()
 		  		{
@@ -47,6 +47,15 @@ requirejs(['main'], function (main) {
 		  		avalon.scan(document.getElementById('headerView'));
 		     
 	    		});
+	    		
+	    		
+	    		var title = localStorage["pageTitel"];
+	    		
+	    		if (title && title != "河洛泡泡")
+	    		{
+		    		vm.title = title;
+		    		vm.back = true;
+	    		}
 
 		  		
 		  		

@@ -15,6 +15,7 @@
 <script data-main="../js/index" src="../lib/require-min.js" ></script>
 
 </head>
+
 <body>
 	
 	
@@ -47,12 +48,12 @@
 	
 	
 <div class="class_icon mt15">
-<ul>
-<li><a href=""><span class="index_icon class_icon01 db"></span><span class="class_name db">骑行</span></a></li>
-<li><a href=""><span class="index_icon class_icon02 db"></span><span class="class_name db">徒步</span></a></li>
-<li><a href=""><span class="index_icon class_icon03 db"></span><span class="class_name db">自驾</span></a></li>
-<li><a href=""><span class="index_icon class_icon04 db"></span><span class="class_name db">漂流</span></a></li>
-<li><a href=""><span class="index_icon class_icon00 db"></span><span class="class_name db">更多</span></a></li>
+<ul ms-controller="category" class="ms-controller" id="category">
+	
+<li ms-for="(index,el) in @category"><a href=""><span ms-attr="{class: 'index_icon db class_icon0'+(index+1)}"></span><span class="class_name db">{{el.title}}</span></a></li>
+
+<!-- <li ms-skip><a href=""><span class="index_icon class_icon00 db"></span><span class="class_name db">更多</span></a></li> -->
+
 </ul>
 </div>
 

@@ -1,11 +1,21 @@
 requirejs(['main'], function (main) {  
      require(['avalon','jquery','auislide','header','domReady!'], function(avalon) {
   
+	 			localStorage["pageTitel"] = "河洛泡泡";
+	 			
 	      	    var vm = avalon.define({
 	    
 		  		$id: "indexVC",
 		  		
 		  		tj: [],
+		  		
+		  		});
+		  		
+		  		var category = avalon.define({
+	    
+		  		$id: "category",
+		  		
+		  		category: [],
 		  		
 		  		});
 		  		
@@ -35,12 +45,15 @@ requirejs(['main'], function (main) {
 		  		avalon.scan(document.getElementById('aui-slide'));
 		  		avalon.scan(document.getElementById('indexVC'));
 		  		avalon.scan(document.getElementById('indexPage'));
+		  		avalon.scan(document.getElementById('category'));
 		  		
 		  		
 		  		console.log("index is loaded!!!!");
 		  		
 		  		getBanner();
+		  		getCategory();
 		  		getTj();
+		  		
 		  		
 		  		function getBanner()
 		  		{
@@ -92,6 +105,26 @@ requirejs(['main'], function (main) {
 						}
 
 					});
+				}
+				
+				
+				function getCategory()
+		  		 {
+		  		 	var url = BaseUrl+"Public/Found/?service=Plans.getCategory";
+					
+					XHttpGet( url, function(data) 
+					{		
+						var code = data.data.code;
+		
+						if(code == '0')
+						{	
+							category.category = data.data.info.slice(0,5);
+							category.category[category.category.length-1].title = "更多";
+							category.category[category.category.length-1].id = "0";
+						}
+		
+					});
+
 				}
 				
 				
